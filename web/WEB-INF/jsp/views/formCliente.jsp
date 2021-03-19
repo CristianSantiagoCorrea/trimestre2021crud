@@ -8,30 +8,70 @@
 <%@include file="cabecera.jsp"%>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+          <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/63d83764ab.js" crossorigin="anonymous"></script>
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+  </script>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+        <title>ShopFAST</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
        
+         <div class="container">  
+             <h1 class="self-align-center">Formulario cliente</h1> 
+             <div class="col-md-4">
+          
         <form:form commandName="cliente" method="post">
           
-            
-            <form:label path="nombre"></form:label>
+             <div class="row mb-3"> 
+            <form:label path="nombre">nombre</form:label>
+                <br/>
             <form:input path="nombre"></form:input>
-            
-            <form:label path="apellido"></form:label>
+            </div>
+            <div class="row mb-3">
+            <form:label path="apellido">Apellido</form:label>
+            <br/>
             <form:input path="apellido"></form:input>
-            
-            <form:label path="correo"></form:label>
+            </div> 
+            <div class="row mb-3">
+            <form:label path="correo">Correo</form:label>
+            <br/>
             <form:input path="correo"></form:input>
-            
-            <form:label path="edad"></form:label>
-            <form:input path="edad"></form:input>
-            
-            <form:button name="Enviar">enviar</form:button>
-            
+            </div>
+            <div class="row mb-3">
+                       
+            <form:label path="edad">Edad</form:label>
+            <br/>
+            <form:input path="edad" ></form:input>
+            </div>
+               <div class="row mb-3">
+                                       
+               <form:button name="Enviar" class="btn btn-warning">Enviar</form:button>
+                  </div>
+            </div>
+            </div>
         </form:form>
+               </div>
+            </div>
+          
         
     </body>
 </html>
