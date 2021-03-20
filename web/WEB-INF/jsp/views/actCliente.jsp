@@ -35,7 +35,47 @@
          <h1>Actualizar cliente</h1>
        </div>
        
-            
+          <div class="container">  
+             <h1 class="self-align-center">Formulario cliente</h1> 
+             <div class="col-md-4">
+          
+        <form:form commandName="Cliente" method="post">
+            <form:errors path=""></form:errors>
+             <div class="row mb-3"> 
+            <form:label path="nombre">nombre</form:label>
+                <br/>
+            <form:input path="nombre"></form:input>
+            </div>
+            <div class="row mb-3">
+            <form:label path="apellido">Apellido</form:label>
+            <br/>
+            <form:input path="apellido"></form:input>
+            </div> 
+            <div class="row mb-3">
+            <form:label path="correo">Correo</form:label>
+            <br/>
+            <form:input path="correo"></form:input>
+            </div>
+            <div class="row mb-3">
+                       
+            <form:label path="edad">Edad</form:label>
+            <br/>
+            <form:input path="edad" ></form:input>
+            </div>
+               <div class="row mb-3">
+                                       
+               <form:button name="Enviar" class="btn btn-warning" value="Enviar_datos">Enviar</form:button>
+                  </div>
+            </div>
+            </div>
+        </form:form>
+               </div>
+            </div>
+        
+        
+        
+        
+      <!--    
         <form action="" method="post" >
           <div class="container">
               <div class="row">
@@ -68,7 +108,7 @@
         </div> 
           </div>
           </div>
-</form> 
+</form> -->
           
     </body>
     

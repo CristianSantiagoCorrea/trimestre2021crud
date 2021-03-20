@@ -14,6 +14,14 @@ public class Cliente{
     public Cliente(){
     
     }
+
+    public Cliente(int id, String nombre, String apellido, String correo, int edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.edad = edad;
+    }
    
 
     public int getId() {

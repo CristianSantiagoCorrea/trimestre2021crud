@@ -7,38 +7,50 @@
       <head>
        <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/styles.css">
-  <!-- Font awesome -->
-  <script src="https://kit.fontawesome.com/63d83764ab.js" crossorigin="anonymous"></script>
-
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
-  </script>
-
-  <!-- fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
-
-        <title>ShopFAST</title>
+  
+       <script src="  https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="  https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="  https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
+<script src="  https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+<script src="  https://cdn.datatables.net/buttons/1.7.0/js/buttons.bootstrap5.min.js"></script>
+<script src="  https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="  https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="  https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="  https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+<script src="  https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+<script src="  https://cdn.datatables.net/buttons/1.7.0/js/buttons.colVis.min.js"></script>
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css/buttons.bootstrap5.min.css">
+  
+  
+  
+  
+  <title>ShopFAST</title>
     </head>
     <body>
-         <div class="d-flex justify-content-center">
+       <script>$(document).ready(function() {
+    var table = $('#example').DataTable( {
+        lengthMenu: [[5],[5]],
+        lengthChange: false,
+        buttons: [ 'copy', 'excel', 'pdf', 'colvis' ]
+    } );
+ 
+    table.buttons().container()
+        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+} );</script>
+        
+        
+        <div class="d-flex justify-content-center">
          <h1>Users</h1>
        </div>
         <a class="btn btn-primary mb-2" href="agregarCliente.htm">agregar cliente</a>
  
       
-   <table class="table table-dark">
+   <table id="example" class="table table-striped" style="width:100%">
   <thead>
+      
   <h2> ALL USERS </h2>
   
      <tr>
@@ -65,6 +77,14 @@
          </c:forEach> 
 
   </tbody>
+   <tfoot>
+   <th>id</th>
+   <th>Nombre</th>
+   <th>Apellido</th>   
+   <th>Email</th> 
+   <th>Edad</th>
+      <th>Opciones</th>
+  </tfoot>
 </table>
     
         
@@ -92,5 +112,10 @@
   </div>
 </div>
           </c:forEach>
+   
+   <script>
+$(document).ready( function () {
+    $('tabladata').DataTable();
+} );</script> 
     </body>
 </html>
