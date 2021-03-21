@@ -19,10 +19,14 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">Controlador</prop>
-                <prop key="agregarCliente.htm">Controlador</prop>
-                <prop key="editar.htm">Controlador</prop>
-                <prop key="borrar.htm">Controlador</prop>
+                <prop key="index.htm">indexController</prop>
+                <prop key="formCliente.htm">homeController</prop>
+                <prop key="mostrarCliente.htm">homeController</prop>
+                <prop key="agregarCliente.htm">homeController</prop>
+                <prop key="actCliente.htm">homeController</prop>  
+                <prop key="borrarCliente.htm">homeController</prop> 
+                <prop key="formConsultarCliente.htm">homeController</prop> 
+                <prop key="listarCliente.htm">homeController</prop> 
             </props>
         </property>
     </bean>
@@ -32,7 +36,11 @@
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
 
-          <bean id ="Controlador" class="controller.Controlador"/>
-
+   
+     <bean name ="homeController" class="Controller.homeController" />
+   
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
 
 </beans>

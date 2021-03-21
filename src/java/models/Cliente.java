@@ -11,9 +11,7 @@ public class Cliente{
     private String apellido;
     private String correo;
     private int edad;
-    public Cliente(){
-    
-    }
+ 
 
     public Cliente(int id, String nombre, String apellido, String correo, int edad) {
         this.id = id;
@@ -22,15 +20,11 @@ public class Cliente{
         this.correo = correo;
         this.edad = edad;
     }
-   
-
-    public int getId() {
-        return id;
+      public Cliente(){
+    
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    
 
     public String getNombre() {
         return nombre;
@@ -64,7 +58,13 @@ public class Cliente{
         this.edad = edad;
     }
     
-    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     
     

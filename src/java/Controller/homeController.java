@@ -5,6 +5,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
+
+import dao.ClienteDao;
 import models.Cliente;
 import models.clienteValidation;
 import org.springframework.dao.DataAccessException;
@@ -33,7 +36,38 @@ public class homeController {
         
     }
     
+    //-------------------------------------------------//
+      @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.GET)
+    public ModelAndView consultarClientexNombre(){
+    ModelAndView mov = new ModelAndView();
+    Cliente cliente = new Cliente();
+    mov.addObject("cliente",cliente);
+    mov.setViewName("views/formConsultarCliente");
+    return mov;
+        
+    } 
+       @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.POST)
+    public ModelAndView consultarClientexNombre(
+    @ModelAttribute("cliente")Cliente cli,
+      BindingResult result,
+      SessionStatus status 
+            ){
+         ModelAndView mav = new ModelAndView();
+         
+        ClienteDao cliDao = new  ClienteDao();
+         
+                String nom = cli.getNombre();
+          
+                   mav.addObject("cliente",cliDao.consultarClienteByNombre(nom));
+               mav.setViewName("views/listarClientes");
+                 return mav;
+    }
+     
+   
     
+    
+    
+    //--------------------------------------------------//
     
     
     
@@ -108,22 +142,54 @@ public class homeController {
    }
 */
     
+    
+    
+    
     @RequestMapping(value = "actCliente.htm", method = RequestMethod.GET)
     public ModelAndView actCliente(HttpServletRequest request){
-    ModelAndView mov = new ModelAndView();
+    ModelAndView mav = new ModelAndView();
     int id =Integer.parseInt( request.getParameter("id"));
-    
     Cliente cli = this.cargarClientebyId(id);
-    mov.addObject("cliente", new Cliente (id, cli.getNombre(), cli.getApellido(),
-     cli.getCorreo(),cli.getEdad()));
-    mov.setViewName("views/actCliente");
-        return mov;
+    mav.addObject("cliente", new Cliente (id, cli.getNombre(),
+    cli.getApellido(),cli.getCorreo(),cli.getEdad()));
+    mav.setViewName("views/actCliente");
+        return mav;
     }
     
+    
+    //=========================================================================
+    @RequestMapping(value = "actCliente.htm", method = RequestMethod.POST)
+    public ModelAndView actCliente(
+    @ModelAttribute("cliente")Cliente cli,
+            BindingResult result,
+            SessionStatus status
+    ){
+        this.cliValidar.validate(cli,result);
+        if(result.hasErrors()){
+     ModelAndView mov = new ModelAndView();
+        mov.addObject("cliente", new Cliente());
+        mov.setViewName("views/actCliente");
+       return mov; 
+    }else{   
+     ModelAndView mav = new ModelAndView();   
+    String sql = "update cliente set nombre = ?, apellido = ?, correo = ?, edad = ? where id = ?";
+    this.jdbcTemplate.update(
+            sql, 
+            cli.getNombre(),
+            cli.getApellido(),
+            cli.getCorreo(),
+            cli.getEdad(),
+            cli.getId());
+        mav.setViewName("redirect:/formCliente.htm");
+     return mav;   
+    }
+    }
     
     public Cliente cargarClientebyId(int id){
         final Cliente cli = new Cliente();
         String sql ="select * from cliente where id = " + id;
+        
+        
         return(Cliente) jdbcTemplate.query(sql,new ResultSetExtractor<Cliente>()
         {
         
@@ -148,35 +214,9 @@ public class homeController {
         });
     }
     
-    @RequestMapping(value = "actCliente.htm", method = RequestMethod.POST)
-    public ModelAndView actCliente(
-    @ModelAttribute("cliente")Cliente cli,
-            BindingResult result,
-            SessionStatus status
     
     
     
-    ){
-        this.cliValidar.validate(cli,result);
-        if(result.hasErrors()){
-     ModelAndView mov = new ModelAndView();
-        mov.addObject("cliente", new Cliente());
-        mov.setViewName("views/actCliente");
-       return mov; 
-    }else{   
-     ModelAndView mav = new ModelAndView();   
-    String sql = "update cliente set nombre = ?, apellido = ?, correo = ?, edad = ? where id = ?";
-    this.jdbcTemplate.update(
-            sql, 
-            cli.getNombre(),
-            cli.getApellido(),
-            cli.getCorreo(),
-            cli.getEdad(),
-            cli.getId());
-        mav.setViewName("redirect://formCliente.htm");
-     return mav;   
-    }
-    }
     
     @RequestMapping("borrarCliente.htm")
     public ModelAndView borrarCliente(HttpServletRequest request){
@@ -193,7 +233,16 @@ public class homeController {
     
     }
    
+      @RequestMapping(value="listarClientes.htm", method=RequestMethod.GET)
+    public ModelAndView listarClientesid(){
+    ModelAndView mov = new ModelAndView();
+    Cliente cliente = new Cliente();
+    mov.setViewName("views/listarClientes");
+    return mov;
+       
     
+    
+    }
     
 }  
     

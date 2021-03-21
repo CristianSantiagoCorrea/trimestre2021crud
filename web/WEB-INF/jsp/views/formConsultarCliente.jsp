@@ -40,41 +40,21 @@
              <div class="col-md-4">
           
         <form:form commandName="cliente" method="post">
-            <form:errors path="*"></form:errors><br><br>
+            <form:errors path=""></form:errors>
              <div class="row mb-3"> 
-              
-            <form:label path="nombre">nombre</form:label> 
+            <form:label path="nombre">nombre</form:label>
                 <br/>
             <form:input path="nombre"></form:input>
             </div>
-            <div class="row mb-3">
-            <form:label path="apellido">Apellido</form:label>
-            <br/>
-            <form:input path="apellido"></form:input>
-            </div> 
-            <div class="row mb-3">
-            <form:label path="correo">Correo</form:label>
-            <br/>
-            <form:input path="correo"></form:input>
-            </div>
-            <div class="row mb-3">
-                       
-            <form:label path="edad">Edad</form:label>
-            <br/>
-            <form:input path="edad"></form:input>
-            </div>
-               <div class="row mb-3">
+             <div class="row mb-3">
                                        
-               <form:button name="Enviar_datos" class="btn btn-warning" value="Enviar_datos">Enviar</form:button>
+               <form:button name="Enviar" class="btn btn-warning" value="Enviar_datos">Enviar</form:button>
                   </div>
             </div>
             </div>
         </form:form>
                </div>
             </div>
-        
-        
-      
-    </body>
+              </body>
     
 </html>

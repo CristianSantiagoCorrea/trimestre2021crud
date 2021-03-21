@@ -26,22 +26,22 @@ public class clienteValidation implements Validator {
        ValidationUtils.rejectIfEmptyOrWhitespace(errors, 
                "nombre", 
                "requiered.nombre", 
-               "Ela campo nombre es obligatorio");
+               "Inserte datos en el campo nombre");
        
        ValidationUtils.rejectIfEmptyOrWhitespace(errors, 
                "apellido", 
                "requiered.apellido", 
-               "Ela campo nombre es obligatorio");
+               "inserte datos en el campo apellido");
        
        ValidationUtils.rejectIfEmptyOrWhitespace(errors, 
                "correo", 
                "requiered.correo", 
-               "Ela campo nombre es obligatorio");
+               "El  campo correo es obligatorio");
        
        ValidationUtils.rejectIfEmptyOrWhitespace(errors, 
                "edad", 
                "requiered.edad", 
-               "Ela campo nombre es obligatorio");
+               "El campo edad es obligatorio");
     }
     
 }
