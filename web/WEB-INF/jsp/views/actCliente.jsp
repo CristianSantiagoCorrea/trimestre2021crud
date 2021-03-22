@@ -32,7 +32,7 @@
     </head>
     <body>
        <div class="d-flex justify-content-center">
-         <h1>Actualizarzzzzzzzz cliente</h1>
+         <h1>Actualizar cliente</h1>
        </div>
        
           <div class="container">  
