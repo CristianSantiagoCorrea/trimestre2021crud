@@ -35,6 +35,6 @@ public class ClienteDao {
     String sql = "select * from cliente where nombre like '%" + nombre + "%'";
     cli = this.jdbcTemplate.queryForList(sql);
     return cli;
-    
+     
 }
 }
