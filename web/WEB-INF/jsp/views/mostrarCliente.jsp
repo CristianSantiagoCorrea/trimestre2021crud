@@ -117,5 +117,6 @@
 $(document).ready( function () {
     $('tabladata').DataTable();
 } );</script> 
+   <%@include file="footer.jsp" %>
     </body>
 </html>

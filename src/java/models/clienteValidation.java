@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**@author : Santiago correa
+ *En este modelo se valida si el formulario de la views/actualizarCliente.jsp
+ *tiene campos validos ejemplo si el campo nombre esta vacio aparece mensaje
+ * 
  */
 package models;
 

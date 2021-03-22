@@ -37,7 +37,7 @@ public class homeController {
     }
     
     //-------------------------------------------------//
-      @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.GET)
     public ModelAndView consultarClientexNombre(){
     ModelAndView mov = new ModelAndView();
     Cliente cliente = new Cliente();
@@ -46,7 +46,7 @@ public class homeController {
     return mov;
         
     } 
-       @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.POST)
     public ModelAndView consultarClientexNombre(
     @ModelAttribute("cliente")Cliente cli,
       BindingResult result,
@@ -87,9 +87,17 @@ public class homeController {
     @RequestMapping(value = "formCliente.htm", method = RequestMethod.POST)
     public ModelAndView homeClientePOST(){
     ModelAndView mov = new ModelAndView();
-    String sql = "select * from cliente";
+   
+    try{
+     String sql = "select * from cliente";
     List datos = this.jdbcTemplate.queryForList(sql);
-    mov.addObject("cliente",datos);
+     mov.addObject("cliente",datos);
+    }catch(Exception ex){
+    
+    System.out.println("Error en la conexion:" + ex);
+    }
+    
+   
     mov.setViewName("views/mostrarCliente");
     return mov;
         
@@ -103,14 +111,16 @@ public class homeController {
     mov.setViewName("views/formCliente");
     return mov;
 } 
-    
     @RequestMapping(value = "agregarCliente.htm", method = RequestMethod.POST)
     public ModelAndView agregarCliente(Cliente cli){
      ModelAndView mov = new ModelAndView();
+    try{
     String sql = "INSERT INTO CLIENTE (NOMBRE,APELLIDO,CORREO,EDAD)" + "VALUES(?,?,?,?);";
     this.jdbcTemplate.update(sql,cli.getNombre(),cli.getApellido(),cli.getCorreo(),cli.getEdad());
+    }catch(Exception ex){
+    System.out.println("Error en la conexion:" + ex); 
+    }
     mov.setViewName("redirect:/formCliente.htm");
-
     return mov;
     }
     
@@ -187,6 +197,8 @@ public class homeController {
     
     public Cliente cargarClientebyId(int id){
         final Cliente cli = new Cliente();
+        
+        
         String sql ="select * from cliente where id = " + id;
         
         
@@ -221,9 +233,17 @@ public class homeController {
     @RequestMapping("borrarCliente.htm")
     public ModelAndView borrarCliente(HttpServletRequest request){
     ModelAndView mov = new ModelAndView();
+    try{
     int id =Integer.parseInt( request.getParameter("id"));
+       
     String sql = "delete from cliente where id = ?";
     this.jdbcTemplate.update(sql, id);
+    }catch(Exception e){
+    
+    System.out.println("Error" + e);
+    
+    }
+    
     
      mov.setViewName("redirect:/formCliente.htm");
     return mov;

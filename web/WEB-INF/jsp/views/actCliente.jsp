@@ -36,7 +36,7 @@
        </div>
        
           <div class="container">  
-             <h1 class="self-align-center">Formulario cliente</h1> 
+             <h1 class="self-align-center">cliente Actual</h1> 
              <div class="col-md-4">
           
         <form:form commandName="cliente" method="post">
@@ -74,7 +74,7 @@
             </div>
         
         
-      
+      <%@include file="footer.jsp" %>
     </body>
     
 </html>

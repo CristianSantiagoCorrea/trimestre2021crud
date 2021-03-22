@@ -44,11 +44,11 @@ public class ClienteTest {
     public void testGetId() {
         System.out.println("getId");
         Cliente instance = new Cliente();
-        int expResult = 0;
+        int expResult = 18;
         int result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -61,7 +61,7 @@ public class ClienteTest {
         Cliente instance = new Cliente();
         instance.setId(id);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       //  fail("The test case is a prototype.");
     }
 
     /**
@@ -71,11 +71,11 @@ public class ClienteTest {
     public void testGetNombre() {
         System.out.println("getNombre");
         Cliente instance = new Cliente();
-        String expResult = "";
+        String expResult = "Santiago";
         String result = instance.getNombre();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -88,7 +88,7 @@ public class ClienteTest {
         Cliente instance = new Cliente();
         instance.setNombre(nombre);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -98,11 +98,11 @@ public class ClienteTest {
     public void testGetApellido() {
         System.out.println("getApellido");
         Cliente instance = new Cliente();
-        String expResult = "";
+        String expResult = "martinez";
         String result = instance.getApellido();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -115,7 +115,7 @@ public class ClienteTest {
         Cliente instance = new Cliente();
         instance.setApellido(apellido);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -125,11 +125,11 @@ public class ClienteTest {
     public void testGetCorreo() {
         System.out.println("getCorreo");
         Cliente instance = new Cliente();
-        String expResult = "";
+        String expResult = "juan.martinez@gmail.com";
         String result = instance.getCorreo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -142,7 +142,7 @@ public class ClienteTest {
         Cliente instance = new Cliente();
         instance.setCorreo(correo);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     //   fail("The test case is a prototype.");
     }
 
     /**
@@ -152,11 +152,11 @@ public class ClienteTest {
     public void testGetEdad() {
         System.out.println("getEdad");
         Cliente instance = new Cliente();
-        int expResult = 0;
+        int expResult =22;
         int result = instance.getEdad();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     //   fail("The test case is a prototype.");
     }
 
     /**
@@ -169,7 +169,7 @@ public class ClienteTest {
         Cliente instance = new Cliente();
         instance.setEdad(edad);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     //   fail("The test case is a prototype.");
     }
     
 }

@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="views/cabecera.jsp" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,6 +30,7 @@
         <title>ShopFAST</title>
     </head>
     <body>
-      <h1>hola </h1>
+      <h1>ShopFAST </h1>
+      <%@include file="views/footer.jsp" %>
     </body>
 </html>
