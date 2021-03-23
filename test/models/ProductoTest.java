@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package models;
 
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,14 +16,19 @@ import static org.junit.Assert.*;
  *
  * @author Santiago
  */
-public class ClienteDaoTest {
-    ClienteDao instance;
-    public ClienteDaoTest() {
-       
+
+
+
+
+public class ProductoTest {
+           Producto instance;
+    public ProductoTest() {
+ 
     }
     
     @BeforeClass
     public static void setUpClass() {
+        
     }
     
     @AfterClass
@@ -33,48 +37,44 @@ public class ClienteDaoTest {
     
     @Before
     public void setUp() {
-      instance = new ClienteDao();
+        System.out.println("Before");
+       instance = new Producto();
     }
     
     @After
     public void tearDown() {
-        System.out.println("After");
     }
 
     /**
-     * Test of consultarClienteById method, of class ClienteDao.
+     * Test of calcularcosto method, of class Producto.
      */
     @Test
-    public void testConsultarClienteById() {
-        System.out.println("consultarClienteById");
-        int id = 18;
-        //ClienteDao instance = new ClienteDao();
-        List expResult = instance.consultarClienteById(18);
-        List result = instance.consultarClienteById(id);
+    public void testCalcularcosto() {
+        System.out.println("calcularcosto");
+        int cantidad = 20;
+        int costo = 1;
+        //Producto instance = new Producto();
+        int expResult = 20;
+        int result = instance.calcularcosto(cantidad, costo);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of consultarClienteByNombre method, of class ClienteDao.
+     * Test of descuento method, of class Producto.
      */
     @Test
-    public void testConsultarClienteByNombre() {
-        System.out.println("consultarClienteByNombre");
-        String nombre = "Santiago";
-        //ClienteDao instance = new ClienteDao();
-        List expResult = instance.consultarClienteByNombre("Santiago");
-        List result = instance.consultarClienteByNombre(nombre);
+    public void testDescuento() {
+        System.out.println("descuento");
+        int valor = 943;
+        int desc = 216;
+        //Producto instance = new Producto();
+        int expResult = 727;
+        int result = instance.descuento(valor, desc);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
     
-    @Test(timeout = 10)
-    public void tiempo(){
-        
-        
-        
-    }
 }

@@ -40,7 +40,7 @@
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.htm">Index</a></li>
                     <li class="nav-item"><a class="nav-link " aria-current="page" href="formCliente.htm">FromCliente</a></li>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="mostrarCliente.htm">CrudCLientes</a></li>
+        
                      <li class="nav-item"><a class="nav-link " aria-current="page" href="formConsultarCliente.htm">Encuentra un cliente</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 </ul>
