@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * este se utiliza para consultar de la vista formconsultarcliente.jsp y mosrtar en listarclientes.jsp
  */
 package dao;
 
@@ -18,24 +16,43 @@ import static org.junit.Assert.*;
  * @author Santiago
  */
 public class ClienteDaoTest {
-    
+    ClienteDao instance;
+
+    /**
+     *
+     */
     public ClienteDaoTest() {
+       
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
+      instance = new ClienteDao();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
+        System.out.println("After");
     }
 
     /**
@@ -45,7 +62,7 @@ public class ClienteDaoTest {
     public void testConsultarClienteById() {
         System.out.println("consultarClienteById");
         int id = 18;
-        ClienteDao instance = new ClienteDao();
+        //ClienteDao instance = new ClienteDao();
         List expResult = instance.consultarClienteById(18);
         List result = instance.consultarClienteById(id);
         assertEquals(expResult, result);
@@ -60,7 +77,7 @@ public class ClienteDaoTest {
     public void testConsultarClienteByNombre() {
         System.out.println("consultarClienteByNombre");
         String nombre = "Santiago";
-        ClienteDao instance = new ClienteDao();
+        //ClienteDao instance = new ClienteDao();
         List expResult = instance.consultarClienteByNombre("Santiago");
         List result = instance.consultarClienteByNombre(nombre);
         assertEquals(expResult, result);
@@ -68,4 +85,13 @@ public class ClienteDaoTest {
         //fail("The test case is a prototype.");
     }
     
+    /**
+     *
+     */
+    @Test(timeout = 10)
+    public void tiempo(){
+        
+        
+        
+    }
 }

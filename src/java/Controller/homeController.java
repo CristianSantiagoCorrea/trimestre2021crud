@@ -21,6 +21,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ *@version 1.0
+ * @author Santiago
+ * @since 10 marzo 2021
+ */
 @Controller
 public class homeController {
     
@@ -28,7 +33,9 @@ public class homeController {
     private JdbcTemplate jdbcTemplate;
          clienteValidation cliValidar;
 
-    
+    /**
+     *
+     */
     public homeController() {
         this.cliValidar = new clienteValidation();
         ConectarDB con = new ConectarDB();
@@ -37,6 +44,11 @@ public class homeController {
     }
     
     //-------------------------------------------------//
+
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.GET)
     public ModelAndView consultarClientexNombre(){
     ModelAndView mov = new ModelAndView();
@@ -46,6 +58,14 @@ public class homeController {
     return mov;
         
     } 
+
+    /**
+     *
+     * @param cli cliente
+     * @param result resultado
+     * @param status
+     * @return
+     */
     @RequestMapping(value = "formConsultarCliente.htm", method = RequestMethod.POST)
     public ModelAndView consultarClientexNombre(
     @ModelAttribute("cliente")Cliente cli,
@@ -68,6 +88,11 @@ public class homeController {
     
     
     //--------------------------------------------------//
+
+    /**
+     *
+     * @return
+     */
     
     
     
@@ -76,14 +101,15 @@ public class homeController {
     ModelAndView mov = new ModelAndView();
     Cliente cliente = new Cliente();
     mov.addObject("cliente",cliente);
-    
- 
-   
     mov.setViewName("views/formCliente");
     return mov;
-        
+      
     } 
 
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "formCliente.htm", method = RequestMethod.POST)
     public ModelAndView homeClientePOST(){
     ModelAndView mov = new ModelAndView();
@@ -103,6 +129,10 @@ public class homeController {
         
     } 
     
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "agregarCliente.htm", method = RequestMethod.GET)
     public ModelAndView agregarCliente(){
     ModelAndView mov = new ModelAndView();
@@ -111,6 +141,12 @@ public class homeController {
     mov.setViewName("views/formCliente");
     return mov;
 } 
+
+    /**
+     *
+     * @param cli
+     * @return
+     */
     @RequestMapping(value = "agregarCliente.htm", method = RequestMethod.POST)
     public ModelAndView agregarCliente(Cliente cli){
      ModelAndView mov = new ModelAndView();
@@ -152,9 +188,11 @@ public class homeController {
    }
 */
     
-    
-    
-    
+    /**
+     *
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "actCliente.htm", method = RequestMethod.GET)
     public ModelAndView actCliente(HttpServletRequest request){
     ModelAndView mav = new ModelAndView();
@@ -168,6 +206,14 @@ public class homeController {
     
     
     //=========================================================================
+
+    /**
+     *
+     * @param cli
+     * @param result
+     * @param status
+     * @return
+     */
     @RequestMapping(value = "actCliente.htm", method = RequestMethod.POST)
     public ModelAndView actCliente(
     @ModelAttribute("cliente")Cliente cli,
@@ -195,6 +241,11 @@ public class homeController {
     }
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Cliente cargarClientebyId(int id){
         final Cliente cli = new Cliente();
         
@@ -226,10 +277,11 @@ public class homeController {
         });
     }
     
-    
-    
-    
-    
+    /**
+     *
+     * @param request
+     * @return
+     */
     @RequestMapping("borrarCliente.htm")
     public ModelAndView borrarCliente(HttpServletRequest request){
     ModelAndView mov = new ModelAndView();
@@ -253,7 +305,11 @@ public class homeController {
     
     }
    
-      @RequestMapping(value="listarClientes.htm", method=RequestMethod.GET)
+    /**
+     *
+     * @return
+     */
+    @RequestMapping(value="listarClientes.htm", method=RequestMethod.GET)
     public ModelAndView listarClientesid(){
     ModelAndView mov = new ModelAndView();
     Cliente cliente = new Cliente();
