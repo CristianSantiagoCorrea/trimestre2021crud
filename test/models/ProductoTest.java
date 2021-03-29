@@ -1,7 +1,7 @@
 /*
  * Se realiza una instance del modelo producto para obtener el 
  * costo total y el valor de descuento
- * 
+ *  
  * 
  */
 package models;

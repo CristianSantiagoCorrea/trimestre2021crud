@@ -1,6 +1,6 @@
 /*
  * este se utiliza para consultar de la vista formconsultarcliente.jsp y mosrtar en listarclientes.jsp
- */
+ */ 
 package dao;
 
 import java.util.List;
