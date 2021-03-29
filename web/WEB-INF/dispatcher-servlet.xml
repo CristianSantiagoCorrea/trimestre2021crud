@@ -27,6 +27,7 @@
                 <prop key="borrarCliente.htm">homeController</prop> 
                 <prop key="formConsultarCliente.htm">homeController</prop> 
                 <prop key="listarCliente.htm">homeController</prop> 
+                <prop key="index.html">homeController</prop> 
             </props>
         </property>
     </bean>

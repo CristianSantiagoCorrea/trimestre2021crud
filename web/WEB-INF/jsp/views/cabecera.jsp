@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link " aria-current="page" href="formCliente.htm">FromCliente</a></li>
         
                      <li class="nav-item"><a class="nav-link " aria-current="page" href="formConsultarCliente.htm">Encuentra un cliente</a></li>
-                    <li class="nav-item"><a class="nav-link" href="file:///C:/Users/Santiago/Documents/NetBeansProjects/guia10/dist/javadoc/index.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/javadoc/index.html">About</a></li>
                 </ul>
          </div>
             </nav>            
