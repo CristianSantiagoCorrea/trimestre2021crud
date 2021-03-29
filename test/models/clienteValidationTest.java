@@ -19,21 +19,36 @@ import org.springframework.validation.Errors;
  */
 public class clienteValidationTest {
     
+    /**
+     *
+     */
     public clienteValidationTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Se realiza una instance del modelo producto para obtener el 
+ * costo total y el valor de descuento
+ * 
+ * 
  */
 package models;
 
@@ -22,25 +23,41 @@ import static org.junit.Assert.*;
 
 public class ProductoTest {
            Producto instance;
+
+    /**
+     *
+     */
     public ProductoTest() {
  
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
         
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
         System.out.println("Before");
        instance = new Producto();
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }

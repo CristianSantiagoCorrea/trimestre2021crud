@@ -11,8 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * @version 1.0
+ * @author Santiago
+ * @since 10 marzo 2021
+ *
+ */
 @Controller
 public class clienteController {
+
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "formCliente.htm", method = RequestMethod.GET)
     public ModelAndView home(){
     ModelAndView mov = new ModelAndView();
@@ -24,8 +35,10 @@ public class clienteController {
         
     } 
     
-    
-   
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "formCliente.htm", method = RequestMethod.POST)
     public ModelAndView mostrarCliente(){
     ModelAndView mav = new ModelAndView();

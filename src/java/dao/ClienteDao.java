@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * En esta clase clienteDao tiene ina comunicacion directa con la clase conectarDB
+ * La esta clase tiene dos metodos un para consultar cliente por id y otro consultar
+ * cliente por nombre que despues se comunica con el controller.homecontroller en la linea 49
+ * para el control de el formulario Formconsultar.jsp
  */
 package dao;
 
@@ -10,13 +11,19 @@ import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
- *
+ *@version 1.0
  * @author Santiago
+ * @since 10 marzo 2021
  */
 public class ClienteDao {
     JdbcTemplate jdbcTemplate;
     ConectarDB con = new ConectarDB();
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     public List consultarClienteById(int id){
     
     List cli = new ArrayList();
@@ -28,6 +35,11 @@ public class ClienteDao {
     
     }
     
+    /**
+     *
+     * @param nombre
+     * @return
+     */
     public List consultarClienteByNombre(String nombre){
     
     List cli = new ArrayList();

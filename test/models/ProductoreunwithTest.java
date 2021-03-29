@@ -16,9 +16,17 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-
+/**
+ *
+ * @author Santiago
+ */
 @RunWith(value = Parameterized.class)
 public class ProductoreunwithTest {
+
+    /**
+     *
+     * @return
+     */
     @Parameters
     public static Iterable<Object[]>getData(){
     List<Object[]> obj = new ArrayList<>();
@@ -32,7 +40,7 @@ public class ProductoreunwithTest {
     /**
      * @param cantidad
      * @param costo
-     * @param expresult
+     * @param expResult
      */
     
     public ProductoreunwithTest(int cantidad, int costo, int expResult) {
@@ -41,7 +49,9 @@ public class ProductoreunwithTest {
         this.expResult = expResult;
     }
     
-    
+    /**
+     *
+     */
     @Test
     public void testCalcularcosto() {
         System.out.println("calcularcosto");
